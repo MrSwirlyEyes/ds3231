@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -360,12 +360,6 @@
 <packages>
 </packages>
 <symbols>
-<symbol name="5V">
-<wire x1="0.762" y1="1.27" x2="0" y2="2.54" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="-0.762" y2="1.27" width="0.254" layer="94"/>
-<pin name="5V" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
-<text x="0" y="2.794" size="0.8128" layer="96" font="vector" ratio="10" align="bottom-center">5V</text>
-</symbol>
 <symbol name="GND">
 <wire x1="-1.905" y1="0.254" x2="1.905" y2="0.254" width="0.254" layer="94"/>
 <pin name="GND" x="0" y="2.54" visible="off" length="point" direction="sup" rot="R270"/>
@@ -374,11 +368,17 @@
 <wire x1="-0.889" y1="-0.762" x2="0.889" y2="-0.762" width="0.254" layer="94"/>
 <wire x1="0" y1="2.54" x2="0" y2="0.254" width="0.1524" layer="94"/>
 </symbol>
+<symbol name="3.3V">
+<wire x1="0.762" y1="1.27" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="-0.762" y2="1.27" width="0.254" layer="94"/>
+<pin name="3.3V" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
+<text x="0" y="2.794" size="0.8128" layer="96" font="vector" ratio="10" align="bottom-center">3.3V</text>
+</symbol>
 </symbols>
 <devicesets>
-<deviceset name="5V" prefix="SUPPLY">
+<deviceset name="GND" prefix="SUPPLY">
 <gates>
-<gate name="5V" symbol="5V" x="0" y="0"/>
+<gate name="GND" symbol="GND" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -388,9 +388,9 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="GND" prefix="SUPPLY">
+<deviceset name="3.3V" prefix="SUPPLY">
 <gates>
-<gate name="GND" symbol="GND" x="0" y="0"/>
+<gate name="3.3V" symbol="3.3V" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -405,12 +405,12 @@
 <library name="PiB">
 <packages>
 <package name="CONNECTOR_RTC-DS3231" urn="urn:adsk.eagle:footprint:4270172/1" locally_modified="yes">
-<pad name="SDA" x="1.27" y="0" drill="1.016" diameter="1.8796" rot="R270"/>
-<pad name="SCL" x="-1.27" y="0" drill="1.016" diameter="1.8796" rot="R270"/>
-<pad name="SQW" x="-3.81" y="0" drill="1.016" diameter="1.8796" rot="R270"/>
-<pad name="32K" x="-6.35" y="0" drill="1.016" diameter="1.8796" rot="R270"/>
-<pad name="VCC" x="3.81" y="0" drill="1.016" diameter="1.8796" rot="R270"/>
-<pad name="GND" x="6.35" y="0" drill="1.016" diameter="1.8796" rot="R270"/>
+<pad name="SDA" x="1.27" y="0" drill="1" diameter="1.85" rot="R270"/>
+<pad name="SCL" x="-1.27" y="0" drill="1" diameter="1.85" rot="R270"/>
+<pad name="SQW" x="-3.81" y="0" drill="1" diameter="1.85" rot="R270"/>
+<pad name="32K" x="-6.35" y="0" drill="1" diameter="1.85" rot="R270"/>
+<pad name="VCC" x="3.81" y="0" drill="1" diameter="1.85" rot="R270"/>
+<pad name="GND" x="6.35" y="0" drill="1" diameter="1.85" rot="R270"/>
 <rectangle x1="-6.604" y1="-0.254" x2="-6.096" y2="0.254" layer="51" rot="R180"/>
 <rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51" rot="R180"/>
 <rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51" rot="R180"/>
@@ -465,7 +465,7 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="RTC_DS3231" prefix="RTC" uservalue="yes">
+<deviceset name="DS3231_RTC" prefix="RTC" uservalue="yes">
 <gates>
 <gate name="G$1" symbol="RTC-DS3231_BREAKOUT" x="0" y="0"/>
 </gates>
@@ -550,11 +550,11 @@
 </classes>
 <parts>
 <part name="ARDUINO1" library="PiB_boards" deviceset="ARDUINO_UNO_R3_NO-HOLES_NO-AVR-ISP" device="" value="Arduino UNO R3"/>
-<part name="SUPPLY1" library="PiB_power_symbols" deviceset="5V" device=""/>
-<part name="SUPPLY2" library="PiB_power_symbols" deviceset="5V" device=""/>
 <part name="SUPPLY3" library="PiB_power_symbols" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="PiB_power_symbols" deviceset="GND" device=""/>
-<part name="RTC1" library="PiB" deviceset="RTC_DS3231" device="_PTH_VERT-FEMALE_2.54MM" package3d_urn="urn:adsk.eagle:package:4270212/2" value="RTC DS3231"/>
+<part name="SUPPLY1" library="PiB_power_symbols" deviceset="3.3V" device=""/>
+<part name="SUPPLY2" library="PiB_power_symbols" deviceset="3.3V" device=""/>
+<part name="RTC1" library="PiB" deviceset="DS3231_RTC" device="_PTH_VERT-FEMALE_2.54MM" package3d_urn="urn:adsk.eagle:package:4270212/2" value="RTC DS3231"/>
 </parts>
 <sheets>
 <sheet>
@@ -565,10 +565,10 @@
 <attribute name="NAME" x="40.64" y="69.088" size="1.27" layer="95" font="vector" ratio="10" align="bottom-center"/>
 <attribute name="VALUE" x="40.64" y="17.272" size="0.635" layer="96" font="vector" ratio="10" align="top-center"/>
 </instance>
-<instance part="SUPPLY1" gate="5V" x="17.78" y="60.96" smashed="yes"/>
-<instance part="SUPPLY2" gate="5V" x="88.9" y="50.8" smashed="yes"/>
 <instance part="SUPPLY3" gate="GND" x="88.9" y="30.48" smashed="yes"/>
 <instance part="SUPPLY4" gate="GND" x="20.32" y="15.24" smashed="yes"/>
+<instance part="SUPPLY1" gate="3.3V" x="88.9" y="50.8" smashed="yes"/>
+<instance part="SUPPLY2" gate="3.3V" x="20.32" y="63.5" smashed="yes"/>
 <instance part="RTC1" gate="G$1" x="81.28" y="43.18" smashed="yes">
 <attribute name="NAME" x="82.55" y="51.308" size="1.27" layer="95" font="vector" ratio="10" align="bottom-right"/>
 <attribute name="VALUE" x="82.55" y="32.512" size="0.635" layer="96" font="vector" ratio="10" align="top-right"/>
@@ -577,20 +577,6 @@
 <busses>
 </busses>
 <nets>
-<net name="5V" class="0">
-<segment>
-<wire x1="17.78" y1="60.96" x2="17.78" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="ARDUINO1" gate="G$1" pin="5V"/>
-<wire x1="17.78" y1="58.42" x2="22.86" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="SUPPLY1" gate="5V" pin="5V"/>
-</segment>
-<segment>
-<pinref part="RTC1" gate="G$1" pin="VCC"/>
-<wire x1="86.36" y1="48.26" x2="88.9" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="SUPPLY2" gate="5V" pin="5V"/>
-<wire x1="88.9" y1="48.26" x2="88.9" y2="50.8" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="GND" class="0">
 <segment>
 <wire x1="20.32" y1="17.78" x2="20.32" y2="20.32" width="0.1524" layer="91"/>
@@ -599,17 +585,17 @@
 <pinref part="SUPPLY4" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="RTC1" gate="G$1" pin="GND"/>
 <wire x1="86.36" y1="35.56" x2="88.9" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
 <wire x1="88.9" y1="35.56" x2="88.9" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="RTC1" gate="G$1" pin="GND"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
-<pinref part="RTC1" gate="G$1" pin="SDA"/>
 <wire x1="88.9" y1="43.18" x2="86.36" y2="43.18" width="0.1524" layer="91"/>
 <label x="88.9" y="43.18" size="1.27" layer="95" font="vector" ratio="10" xref="yes"/>
+<pinref part="RTC1" gate="G$1" pin="SDA"/>
 </segment>
 <segment>
 <pinref part="ARDUINO1" gate="G$1" pin="SDA"/>
@@ -624,9 +610,23 @@
 <label x="60.96" y="66.04" size="1.27" layer="95" font="vector" ratio="10" xref="yes"/>
 </segment>
 <segment>
-<pinref part="RTC1" gate="G$1" pin="SCL"/>
 <wire x1="88.9" y1="45.72" x2="86.36" y2="45.72" width="0.1524" layer="91"/>
 <label x="88.9" y="45.72" size="1.27" layer="95" font="vector" ratio="10" xref="yes"/>
+<pinref part="RTC1" gate="G$1" pin="SCL"/>
+</segment>
+</net>
+<net name="3.3V" class="0">
+<segment>
+<pinref part="SUPPLY2" gate="3.3V" pin="3.3V"/>
+<pinref part="ARDUINO1" gate="G$1" pin="3.3V"/>
+<wire x1="20.32" y1="63.5" x2="20.32" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="60.96" x2="22.86" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY1" gate="3.3V" pin="3.3V"/>
+<wire x1="86.36" y1="48.26" x2="88.9" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="48.26" x2="88.9" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="RTC1" gate="G$1" pin="VCC"/>
 </segment>
 </net>
 </nets>
