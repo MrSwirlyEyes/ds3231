@@ -1,3 +1,6 @@
+/*
+	ds3231.h
+*/
 #ifndef DS3231_h
 #define DS3231_h
 
@@ -5,18 +8,20 @@
 
 
 
+// Use TinyWireM for ATtiny variants, otherwise use Wire
 #if defined(__AVR_ATtiny2313__) || defined(__AVR_ATtiny4313__)
 	#include <TinyWireM.h>
 #else
 	#include <Wire.h>
 #endif
 
+
+
 #define DS3231_I2C_ADDRESS 0x68
 
 
 
 class DS3231 {
-
 	private:
 		byte _second;
 		byte _minute;
