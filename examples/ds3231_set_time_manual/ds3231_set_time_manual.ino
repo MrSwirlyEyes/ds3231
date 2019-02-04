@@ -143,7 +143,7 @@ void set_time() {
 	// set the initial time here:
 	// NOTE: 24H time
 	// DS3231         seconds, minutes, hours, dayOfWeek, date, month, year
-	rtc.set_DS3231_time(_second, _minute, _hour, _day_of_week, _day_of_month, _month, _year);
+	rtc.set_time(_second, _minute, _hour, _day_of_week, _day_of_month, _month, _year);
 
 	Serial.println();
 	Serial.println();
@@ -163,7 +163,7 @@ void print_intro_message() {
 
 void print_outro_message() {
 
-	print_time();    
+	display_time();    
 
 	Serial.println("PROGRAMMING THE RTC DS3231...");
 	Serial.println();
@@ -171,7 +171,7 @@ void print_outro_message() {
 	Serial.println("Displaying the time until program is terminated...");
 }
 
-void print_time() {
+void display_time() {
 	Serial.print("Time entered: ");
 	Serial.print(_day_of_week); Serial.print(" ");
 	Serial.print(_hour); Serial.print(":");

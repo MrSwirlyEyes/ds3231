@@ -27,7 +27,7 @@ DS3231::DS3231() {
 
 
 // Set the time of the DS3231
-void DS3231::set_DS3231_time(int _second, int _minute, int _hour, int _day_of_week, int _day_of_month, int _month, int _year) {
+void DS3231::set_time(int _second, int _minute, int _hour, int _day_of_week, int _day_of_month, int _month, int _year) {
 	#if defined(__AVR_ATtiny2313__) || defined(__AVR_ATtiny4313__)
 		// sets time and date data to DS3231
 		TinyWireM.beginTransmission(DS3231_I2C_ADDRESS);
@@ -58,7 +58,7 @@ void DS3231::set_DS3231_time(int _second, int _minute, int _hour, int _day_of_we
 
 
 // Get the time of the DS3231
-void DS3231::get_DS3231_time() {
+void DS3231::get_time() {
 	#if defined(__AVR_ATtiny2313__) || defined(__AVR_ATtiny4313__)
 		TinyWireM.beginTransmission(DS3231_I2C_ADDRESS);
 		TinyWireM.send(0); // set DS3231 register pointer to 00h
@@ -95,7 +95,7 @@ void DS3231::get_DS3231_time() {
 // Conveniently prints the time to the Serial Monitor
 void DS3231::display_time() {
 	// retrieve data from DS3231
-	get_DS3231_time();
+	get_time();
 
 	Serial.print(get_hour(), DEC);
 

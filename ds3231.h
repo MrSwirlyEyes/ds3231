@@ -41,9 +41,9 @@ class DS3231 {
 	public:
 		DS3231();
 
-		void set_DS3231_time(int _second,int _minute,int _hour,int _day_of_week,int _day_of_month,int _month,int _year);
+		void set_time(int _second,int _minute,int _hour,int _day_of_week,int _day_of_month,int _month,int _year);
 
-		void get_DS3231_time();
+		void get_time();
 
 		void display_time();
 

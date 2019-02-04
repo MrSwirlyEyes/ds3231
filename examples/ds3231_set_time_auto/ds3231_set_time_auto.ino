@@ -54,7 +54,7 @@ void loop() {
 	rtc.get_time();
 
 	// Print the RTC time
-	rtc.print_time();
+	rtc.display_time();
 }
 
 
