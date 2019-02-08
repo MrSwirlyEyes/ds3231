@@ -1,5 +1,6 @@
 #include <ds3231.h>
 
+// Uncomment for debug statements to be printed
 // #define DEBUG 1
 
 #define BAUDRATE 9600
@@ -25,13 +26,20 @@ void setup() {
 
 
 	#ifdef DEBUG
+    Serial.print("second: ");
 		Serial.println(_second);
+    Serial.print("minute: ");
 		Serial.println(_minute);
+    Serial.print("hour: ");
 		Serial.println(_hour);
 
+    Serial.print("day of week: ");
 		Serial.println(_day_of_week);
+    Serial.print("month: ");
 		Serial.println(_month);
+    Serial.print("day of month: ");
 		Serial.println(_day_of_month);
+    Serial.print("year: ");
 		Serial.println(_year);
 	#endif
 
@@ -62,6 +70,7 @@ void loop() {
 // Converts the time (hour, minute, and second) from String to integer
 void get_time(String _time,int & _second,int & _minute, int & _hour) {
 	#ifdef DEBUG
+    Serial.print("system time: ");
 		Serial.println(_time);
 	#endif
 
@@ -73,8 +82,11 @@ void get_time(String _time,int & _second,int & _minute, int & _hour) {
 	_second = _time.substring(delimiter2+1).toInt();
 
 	#ifdef DEBUG
+    Serial.print("\tsystem hour: ");
 		Serial.println(_hour);
+    Serial.print("\tsystem minute: ");
 		Serial.println(_minute);
+    Serial.print("\tsystem second: ");
 		Serial.println(_second);
 	#endif
 }
@@ -83,7 +95,10 @@ void get_time(String _time,int & _second,int & _minute, int & _hour) {
 
 // Converts the date (day of week, day of month, month, and year) from String to integer
 void get_date(String _date,int & _day_of_week,int & _day_of_month,int & _month,int & _year) {
-	Serial.println(_date);
+  #ifdef DEBUG
+    Serial.print("system date: ");
+  	Serial.println(_date);
+  #endif
 
 	String _month_str;
 
@@ -94,17 +109,36 @@ void get_date(String _date,int & _day_of_week,int & _day_of_month,int & _month,i
 	_day_of_month = _date.substring(delimiter1+1,delimiter2).toInt();
 	_year = _date.substring(delimiter2+1).toInt();
 
+  // There is an extra space in the day of month in the _date string when the day of the month is less than 10.  This checks for this.
+  if(_year < 2000 || _day_of_month == 0) {
+    delimiter1 = _date.indexOf(' ');
+    delimiter2 = _date.indexOf(' ',delimiter1+2);
+  
+    _month_str = _date.substring(0,delimiter1);
+    _day_of_month = _date.substring(delimiter1+1,delimiter2).toInt();
+    _year = _date.substring(delimiter2+1).toInt();
+  }
+
+  #ifdef DEBUG
+    Serial.print("\tsystem Day of month: ");
+    Serial.println(_day_of_month);
+    Serial.print("\tsystem month: ");
+    Serial.println(_month_str);
+    Serial.print("\tsystem year: ");
+    Serial.println(_year);
+  #endif
+
 	_month = get_month(_month_str);
 	if(_month == -1)
 		Serial.println("ERROR DETERMINING MONTH...");
 	_day_of_week = get_day_of_week(_day_of_month,_month,_year);
 
 	_year -= 2000;
-	
-	Serial.println(_day_of_week);
-	Serial.println(_day_of_month);
-//  Serial.println(_month);
-//  Serial.println(_year);
+
+  #ifdef DEBUG
+    Serial.print("Day of week: ");
+  	Serial.println(_day_of_week);
+  #endif
 }
 
 
@@ -117,10 +151,16 @@ int get_day_of_week(int day_of_month,int month,int year) {
 
 	int day_of_week = (((year % 100) / 4 + day_of_month) + key_value - leap_year_offset + century_code + (year % 100)) % 7;
 
-	Serial.println(key_value);
-	Serial.println(leap_year_offset);
-	Serial.println(century_code);
-	Serial.println(day_of_week);
+  #ifdef DEBUG
+    Serial.print("key_value: ");
+  	Serial.println(key_value);
+    Serial.print("leap_year_offset: ");
+  	Serial.println(leap_year_offset);
+    Serial.print("century_code: ");
+  	Serial.println(century_code);
+    Serial.print("Day of week: ");
+    Serial.println(day_of_week);
+  #endif
 
 	if(day_of_week == 0)
 		return 7;
