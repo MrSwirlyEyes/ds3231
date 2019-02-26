@@ -1044,6 +1044,35 @@
 </library>
 <library name="_batteries">
 <packages>
+<package name="BR-1225" urn="urn:adsk.eagle:footprint:2973702/1">
+<smd name="-" x="0" y="0" dx="4" dy="4" layer="1" roundness="50"/>
+<smd name="+_2" x="7.75" y="0" dx="3.5" dy="3.6" layer="1" roundness="50"/>
+<smd name="+_1" x="-7.75" y="0" dx="3.5" dy="3.6" layer="1" roundness="50"/>
+<wire x1="-9.5" y1="1.6" x2="-9.5" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="-9.5" y1="-1.6" x2="-6.6" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="-9.5" y1="1.6" x2="-6.6" y2="1.6" width="0.127" layer="21"/>
+<wire x1="-6.6" y1="-4.9" x2="6.6" y2="-4.9" width="0.127" layer="21"/>
+<wire x1="0" y1="2.9" x2="4" y2="6.9" width="0.127" layer="21"/>
+<wire x1="0" y1="2.9" x2="-4" y2="6.9" width="0.127" layer="21"/>
+<wire x1="-4" y1="6.9" x2="-6.6" y2="4.3" width="0.127" layer="21"/>
+<wire x1="4" y1="6.9" x2="6.6" y2="4.3" width="0.127" layer="21"/>
+<wire x1="-6.6" y1="4.3" x2="-6.6" y2="1.6" width="0.127" layer="21"/>
+<wire x1="6.6" y1="-1.6" x2="9.5" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="9.5" y1="-1.6" x2="9.5" y2="1.6" width="0.127" layer="21"/>
+<wire x1="9.5" y1="1.6" x2="6.6" y2="1.6" width="0.127" layer="21"/>
+<wire x1="6.6" y1="4.3" x2="6.6" y2="1.6" width="0.127" layer="21"/>
+<wire x1="-6.6" y1="-4.9" x2="-6.6" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="6.6" y1="-4.9" x2="6.6" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="0" y1="6.25" x2="-6.25" y2="0" width="0.127" layer="51" style="shortdash" curve="90"/>
+<wire x1="-6.25" y1="0" x2="-0.127" y2="-6.25" width="0.127" layer="51" style="shortdash" curve="90"/>
+<wire x1="-0.127" y1="-6.25" x2="0.127" y2="-6.25" width="0.127" layer="51" style="shortdash"/>
+<wire x1="0.127" y1="-6.25" x2="6.25" y2="0" width="0.127" layer="51" style="shortdash" curve="90"/>
+<wire x1="6.25" y1="0" x2="0" y2="6.25" width="0.127" layer="51" style="shortdash" curve="90"/>
+<circle x="-8.05" y="0" radius="0.75" width="0.127" layer="51"/>
+<circle x="8.05" y="0" radius="0.75" width="0.127" layer="51"/>
+<text x="0" y="7.3" size="0.5" layer="25" font="vector" ratio="10" align="center">&gt;NAME</text>
+<text x="0" y="6.7" size="0.32" layer="27" font="vector" ratio="10" align="center">&gt;VALUE</text>
+</package>
 <package name="CR-2032" urn="urn:adsk.eagle:footprint:2959515/1" locally_modified="yes">
 <circle x="0" y="0" radius="10" width="0.127" layer="21"/>
 <smd name="-" x="0" y="0" dx="5.1" dy="5.1" layer="1"/>
@@ -1080,35 +1109,6 @@
 <wire x1="11.5" y1="-2.55" x2="11.5" y2="-0.55" width="0.127" layer="21"/>
 <wire x1="11.5" y1="-0.55" x2="10.6" y2="-0.55" width="0.127" layer="21"/>
 </package>
-<package name="BR-1225" urn="urn:adsk.eagle:footprint:2973702/1">
-<smd name="-" x="0" y="0" dx="4" dy="4" layer="1" roundness="50"/>
-<smd name="+_2" x="7.75" y="0" dx="3.5" dy="3.6" layer="1" roundness="50"/>
-<smd name="+_1" x="-7.75" y="0" dx="3.5" dy="3.6" layer="1" roundness="50"/>
-<wire x1="-9.5" y1="1.6" x2="-9.5" y2="-1.6" width="0.127" layer="21"/>
-<wire x1="-9.5" y1="-1.6" x2="-6.6" y2="-1.6" width="0.127" layer="21"/>
-<wire x1="-9.5" y1="1.6" x2="-6.6" y2="1.6" width="0.127" layer="21"/>
-<wire x1="-6.6" y1="-4.9" x2="6.6" y2="-4.9" width="0.127" layer="21"/>
-<wire x1="0" y1="2.9" x2="4" y2="6.9" width="0.127" layer="21"/>
-<wire x1="0" y1="2.9" x2="-4" y2="6.9" width="0.127" layer="21"/>
-<wire x1="-4" y1="6.9" x2="-6.6" y2="4.3" width="0.127" layer="21"/>
-<wire x1="4" y1="6.9" x2="6.6" y2="4.3" width="0.127" layer="21"/>
-<wire x1="-6.6" y1="4.3" x2="-6.6" y2="1.6" width="0.127" layer="21"/>
-<wire x1="6.6" y1="-1.6" x2="9.5" y2="-1.6" width="0.127" layer="21"/>
-<wire x1="9.5" y1="-1.6" x2="9.5" y2="1.6" width="0.127" layer="21"/>
-<wire x1="9.5" y1="1.6" x2="6.6" y2="1.6" width="0.127" layer="21"/>
-<wire x1="6.6" y1="4.3" x2="6.6" y2="1.6" width="0.127" layer="21"/>
-<wire x1="-6.6" y1="-4.9" x2="-6.6" y2="-1.6" width="0.127" layer="21"/>
-<wire x1="6.6" y1="-4.9" x2="6.6" y2="-1.6" width="0.127" layer="21"/>
-<wire x1="0" y1="6.25" x2="-6.25" y2="0" width="0.127" layer="51" style="shortdash" curve="90"/>
-<wire x1="-6.25" y1="0" x2="-0.127" y2="-6.25" width="0.127" layer="51" style="shortdash" curve="90"/>
-<wire x1="-0.127" y1="-6.25" x2="0.127" y2="-6.25" width="0.127" layer="51" style="shortdash"/>
-<wire x1="0.127" y1="-6.25" x2="6.25" y2="0" width="0.127" layer="51" style="shortdash" curve="90"/>
-<wire x1="6.25" y1="0" x2="0" y2="6.25" width="0.127" layer="51" style="shortdash" curve="90"/>
-<circle x="-8.05" y="0" radius="0.75" width="0.127" layer="51"/>
-<circle x="8.05" y="0" radius="0.75" width="0.127" layer="51"/>
-<text x="0" y="7.3" size="0.5" layer="25" font="vector" ratio="10" align="center">&gt;NAME</text>
-<text x="0" y="6.7" size="0.32" layer="27" font="vector" ratio="10" align="center">&gt;VALUE</text>
-</package>
 <package name="BATTERY_COINCELL-20MM-PTH" urn="urn:adsk.eagle:footprint:2973707/1">
 <wire x1="-3.75" y1="10.5" x2="-3.75" y2="14" width="0.2032" layer="21"/>
 <wire x1="-3.75" y1="14" x2="3.75" y2="14" width="0.2032" layer="21"/>
@@ -1129,7 +1129,7 @@
 <packageinstance name="CR-2032"/>
 </packageinstances>
 </package3d>
-<package3d name="BATTERY_COINCELL-20MM-PTH" urn="urn:adsk.eagle:package:4291813/2" type="model">
+<package3d name="BATTERY_COINCELL-20MM-PTH" urn="urn:adsk.eagle:package:4291813/3" type="model">
 <packageinstances>
 <packageinstance name="BATTERY_COINCELL-20MM-PTH"/>
 </packageinstances>
@@ -1207,7 +1207,7 @@
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:4291813/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:4291813/3"/>
 </package3dinstances>
 <technologies>
 <technology name="">
@@ -1252,11 +1252,11 @@
 <part name="SUPPLY6" library="_power_symbols" deviceset="VCC" device=""/>
 <part name="SUPPLY7" library="_power_symbols" deviceset="3V" device=""/>
 <part name="SUPPLY8" library="_power_symbols" deviceset="GND" device=""/>
-<part name="BATT1" library="_batteries" deviceset="BATTERY_COIN-CELL" device="_SMD_3V_20MM" package3d_urn="urn:adsk.eagle:package:2959529/4" value="CR2032 225mAh/3V"/>
 <part name="IC1" library="_special" deviceset="DS3231" device="_DS3231_RTC_CLK_I2C_SOIC-16" package3d_urn="urn:adsk.eagle:package:7208538/1" value="DS3231"/>
 <part name="J1" library="_connectors" deviceset="1X06" device="PTH_RA_MALE_2.54MM" package3d_urn="urn:adsk.eagle:package:7208728/1" value="PTH RA MALE"/>
 <part name="SUPPLY9" library="_power_symbols" deviceset="VCC" device=""/>
 <part name="SUPPLY10" library="_power_symbols" deviceset="GND" device=""/>
+<part name="BATT1" library="_batteries" deviceset="BATTERY_COIN-CELL" device="_PTH_3V_20MM" package3d_urn="urn:adsk.eagle:package:4291813/3" value="CR2032 225mAh/3V"/>
 </parts>
 <sheets>
 <sheet>
@@ -1283,10 +1283,6 @@
 <instance part="SUPPLY6" gate="VCC" x="73.66" y="60.96" smashed="yes"/>
 <instance part="SUPPLY7" gate="G$1" x="15.24" y="48.26" smashed="yes"/>
 <instance part="SUPPLY8" gate="GND" x="15.24" y="27.94" smashed="yes"/>
-<instance part="BATT1" gate="G$1" x="15.24" y="40.64" smashed="yes">
-<attribute name="NAME" x="15.494" y="41.148" size="1.27" layer="95" font="vector" ratio="10"/>
-<attribute name="VALUE" x="15.494" y="38.862" size="0.635" layer="96" font="vector" ratio="10" align="top-left"/>
-</instance>
 <instance part="IC1" gate="G$1" x="50.8" y="40.64" smashed="yes">
 <attribute name="NAME" x="50.8" y="48.514" size="1.27" layer="95" font="vector" ratio="10" align="bottom-center"/>
 <attribute name="VALUE" x="50.8" y="30.226" size="0.635" layer="96" font="vector" ratio="10" align="top-center"/>
@@ -1297,6 +1293,10 @@
 </instance>
 <instance part="SUPPLY9" gate="VCC" x="114.3" y="38.1" smashed="yes"/>
 <instance part="SUPPLY10" gate="GND" x="104.14" y="27.94" smashed="yes"/>
+<instance part="BATT1" gate="G$1" x="15.24" y="40.64" smashed="yes">
+<attribute name="NAME" x="15.494" y="41.148" size="1.27" layer="95" font="vector" ratio="10"/>
+<attribute name="VALUE" x="15.494" y="38.862" size="0.635" layer="96" font="vector" ratio="10" align="top-left"/>
+</instance>
 </instances>
 <busses>
 </busses>
